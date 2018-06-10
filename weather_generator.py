@@ -4,10 +4,11 @@
 
 #Program generate table to .html file with info about weather in specified cities.
 
-#To run the program the Api key (from OpenWeatherMap) is required, which should be
-#located in file: apikey.txt in the main folder with program.
+#   To run the program the Api key (from OpenWeatherMap) is required, which should be
+#   located in file: apikey.txt in the main folder with program.
 
-#For help please type: weather_generator.py -h or weather_generator.py --help
+#   To run program with cities from file, please type: weather_generator.py -f [FILE_PATH]
+#   For help please type: weather_generator.py -h or weather_generator.py --help
 
 
 import requests
@@ -18,7 +19,7 @@ import argparse
 #Adding arguments
 parser = argparse.ArgumentParser(description='Gets whether in specified city.')
 parser.add_argument('-c', nargs='+', type=str, help='loads specified cities separated by space', metavar='CITY', dest='cities')
-parser.add_argument('-f', type=argparse.FileType('r'), help='loads specified cities form a file, separated by ; ', metavar='FILE', dest='input_file')
+parser.add_argument('-f', type=argparse.FileType('r'), help='loads specified cities from a file, separated by ; ', metavar='FILE', dest='input_file')
 args = parser.parse_args()
 
 
